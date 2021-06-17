@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill out the form</title>
+    <style>
+        body{
+        background-color: pink;
+        color: blue;
+        font-size: 25px;
+        }
+        input{
+            display: block;
+            margin-top: 0.5em;
+        }
+        
+        input {
+            margin-top: 0.5em;
+            outline: none;
+            padding: 0.75em;
+            border: none;
+            min-width: 80%
+
+        }
+            
+        #table{
+        font-family: "Segoe Script";
+        border-radius: 5%;
+        width: fit-content;
+        padding: 1em 2em;
+        box-shadow: 2px 2px 2px 3px pink;
+        font-size: 15px;
+        color: rebeccapurple;
+        font-weight: 1000;
+        height: 850px;
+        width: 700px;
+        background-color: turquoise;
+    }
+    #sub{
+        background-color: rebeccapurple;
+        font-size: 15px;
+        display: block;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        border: transparent;
+        cursor: pointer;
+        border-radius: 10%;
+    }
+    #clear{
+        background-color: rebeccapurple;
+        font-size: 15px;
+        display: block;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        border: transparent;
+        cursor: pointer;
+        border-radius: 10%;
+    }
+    #h1{
+        color: rebeccapurple;
+        font-family: 'Segoe Script';
+        font-weight: bolder;
+        font-size: 40px;
+    }    
+        
+    </style>
+            </head>
+            <body> 
+                <center>
+                    <form id="table" action="direct1.html" method="POST" name="f1" onsubmit="return(validate())">
+                    <label> First Name: </label>
+                    <input id="name" type="text" placeholder="First Name" required>
+                    <span id="s1" style="color:red;"></span>
+                    <br><br>
+
+                    <label> Last Name: </label>
+                    <input type="text" placeholder="Last Name" required> 
+                    <span id="s2" style="color:red;"></span>
+                    <br><br>
+
+                    <label>Card Details: </label>
+                    <input type="radio" id="CREDIR" name="CARD"> Credit
+                    <input type="radio" id="DEBIT" name="CARD"> Debit
+                    <input type="number" name="CDS" placeholder="Card details" required>
+                    <span id="s3" style="color:red;"></span>
+                    <br/><br>
+
+                    <label> Email: </label>
+                    <input type="email" placeholder="Email" required>
+                    <span id="s4" style="color:red;"></span>
+                    <br><br>
+
+                    <label>Mobile: </label> 
+                    <input type="number" name="MOB" placeholder="Enter your mobile Number" required>
+                    <span id="s5" style="color:red;"></span>
+                    <br/>
+
+                    <label> Address: </label>
+                    <br><br>
+                    <textarea name="" id="" cols="80" rows="8" required></textarea>
+                    <br>
+                    <button type="submit" id="sub">Submit</button>
+                    <br/>
+                    <button type="reset" id="clear">Clear</button>    
+                </form>
+            </center>
+            <script>
+                function validate()
+                {
+                    var c=document.f1.CDS.value;
+                    if(c.length !=16)
+                    {
+                        document.getElementById("s3").innerHTML="*Please enter correct card details";
+                        document.f1.CDS.focus();
+                        return false;
+                    }
+                    else{
+                        document.getElementById("s3").innerHTML=""
+                    }
+                    var mob=document.f1.MOB.value;
+                    if(mob.length !=11)
+                    {
+                        document.getElementById("s5").innerHTML="*Mobile Number should be of 11 digits"
+                        document.f1.MOB.focus();
+                        return false;
+                    }
+                    else{
+                        document.getElementById("s5").innerHTML="";
+                    }
+                }   
+            </script>
+    </form>
+
+</body>
+</html>

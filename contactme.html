@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: lightpink;
+                font-size: 25px;
+            }
+            #contact{
+               height: 300px;
+               width: 400px;
+               border-radius: 5px;
+               border: blue 5px dotted;
+               color: rgb(0, 0, 0);
+               font-size: 25px;
+               padding-left: 10px;
+               padding-right: 10px;
+               padding-bottom: 20px;
+               padding-top: 10px;   
+               font-family: Arial, Helvetica, sans-serif;
+           }
+           #Reg-Form{
+               font-family: Arial, Helvetica, sans-serif;
+               width: fit-content;
+               padding: 3em 6em;
+               border-radius: 5%;
+               box-shadow: 2px 2px 2px 2px blue;
+               font-size: 20px;
+           }
+           #sub{
+               background-color: royalblue;
+               color: white;
+               border: 0 transparent;
+               cursor: pointer;
+               font-size: 18px;
+           }
+           #name{
+               font-size: 20px;
+           }
+           #email{
+               font-size: 20px;
+           }
+           #clear{
+               background-color: royalblue;
+               color: white;
+               border: 0 transparent;
+               cursor: pointer;
+               font-size: 18px;
+           }
+        </style>
+    </head>
+    <body>
+        <center>
+        <section id="contact">
+        <div>
+        <h1>
+        How to contact me? 
+        </h1>
+        <p>
+        If you want to contact me here is my email address <b> krittikasweet2009@gmail.com </b>
+        </p>
+        </div>
+        </section>
+        </center>
+        <br><br>
+        <center>
+        <form id="Reg-Form" method="POST">
+            <h1> Get in Touch</h1>
+                <input id="name" type="text" placeholder="Name" required>
+                <br><br>
+                <input id="email" type="email" placeholder="Email" required>
+                <br><br> 
+                <input type="radio" name="gen"> Male
+                <input type="radio" name="gen"> Female
+                <br><br>
+                <center>
+                <button id="sub">Submit</button>
+                </center>
+                <br>
+                <input id="clear" type="reset" value="Clear">
+                <br><br>
+        </form>
+    </center>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bootstrap 4</title>
+    
+</head>
+<body>
+    <marquee><h1 style="font-family: 'MV Boli';">Forms</h1></marquee>
+    <form action="" method="POST" name="f1" onsubmit="return(validate())">
+      <label for="FName">First Name:</label>
+      <input type="text" name="FName">
+      <span id="s1" style="color:red;"></span>
+      <br/>
+      <label for="">Mobile No:</label>
+      <input type="tel" name="MOB"> 
+      <span id="s2" style="color:red;"></span>
+      <br/>
+      <label>Carrd Details: </label>
+      <input type="number" name="CARD">
+      <span id="s3" style="color:red;"></span>
+      <br/>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Clear">
+    </form>
+    
+      
+      <script>
+      var card=document.f1.CARD.value;
+      if(card=="")
+      {
+        document.getElementById("s3").innerHTML="*Please enter card details";
+        document.f1.CARD.focus();
+        return false;
+      }
+      else if(isNaN(card))
+      {
+        document.getElementById("s3").innerHTML="*Please only card details nothing else";
+        document.f1.CARD.focus();
+        return false;
+      }
+      else if(card.length != 16)
+      {
+        document.getElementById("s3").innerHTML="*Card number is invalid";
+        document.f1.CARD.focus();
+        return false;
+      }
+      else{
+        document.getElementById("s3").innerHTML=""
+      }
+      
+      function validate()
+      {
+          var fname=document.f1.FName.value;
+          if(fname=="")
+          {
+            document.getElementById("s1").innerHTML="*Please enter your name";
+            document.f1.FName.focus();
+            return false;
+          }
+          else if(!isNaN(fname))
+          {
+            document.getElementById("s1").innerHTML="*Please enter only your name not anything else";
+            document.f1.FName.focus();
+            return false;
+          }
+          else{
+            document.getElementById("s1").innerHTML="";
+          }
+          var n=document.f1.MOB.value;
+          if(n=="")
+          {
+            document.getElementById("s2").innerHTML="*Please enter your mobile number"
+            document.f1.MOB.focus();
+            return false;
+          }
+          else if(isNaN(n))
+          {
+            document.getElementById("s2").innerHTML="*Please enter only your mobile number nothing else"
+            document.f1.MOB.focus();
+            return false;
+          }
+          else if(n.length != 11)
+          {
+            document.getElementById("s2").innerHTML="*Mobile Number should be of 11 digits"
+            document.f1.MOB.focus();
+            return false;
+          }
+          else{
+            document.getElementById("s2").innerHTML=""
+          }
+
+          var card=document.f1.CARD.value;
+          if(card=="")
+          {
+            document.getElementById("s3").innerHTML="*Please enter card details";
+            document.f1.CARD.focus();
+            return false;
+          }
+          else if(isNaN(card))
+          {
+            document.getElementById("s3").innerHTML="*Please only card details nothing else";
+            document.f1.CARD.focus();
+            return false;
+          }
+          else if(card.length != 16)
+          {
+            document.getElementById("s3").innerHTML="*Card number is invalid";
+            document.f1.CARD.focus();
+            return false;
+          }
+          else{
+            document.getElementById("s3").innerHTML=""
+          }
+      }
+    </script>
+</body>
+</html>
